@@ -40,13 +40,13 @@
 <!-- ***** Preloader End ***** -->
 
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s" style="z-index: 99999999">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo" style="display: flex">
+                    <a href="/" class="logo" style="display: flex">
                         <img src="/images/logo.svg" alt="" style="width: 70px;margin-right: 10px;">
                         <h4>avo<span>Code</span></h4>
                     </a>
@@ -56,9 +56,9 @@
                         <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="#about">About Us</a></li>
                         <li class="scroll-to-section"><a href="#services">Services</a></li>
-                        <li class="scroll-to-section"><a href="#contact">Message Us</a></li>
+                        <li class="scroll-to-section"><a href="#contactUs">Message Us</a></li>
                         <li class="scroll-to-section">
-                            <div class="main-green-button"><a href="#contact">Contact Now</a></div>
+                            <div class="main-green-button"><a href="#contactUs">Contact Now</a></div>
                         </li>
                     </ul>
                     <a class='menu-trigger'>
@@ -86,7 +86,7 @@
                                 software solutions that help businesses grow.
                             </p>
                             <li class="scroll-to-section">
-                                <div class="main-green-button"><a href="#contact">Contact Now</a></div>
+                                <div class="main-green-button"><a href="#contactUs">Contact Now</a></div>
                             </li>
                         </div>
                     </div>
@@ -115,7 +115,8 @@
                         <div class="col-12">
                             <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
                                 <p>
-                                    At <b style="color: var(--quaternary-color)">avoCode</b>, we are passionate about creating custom software solutions that
+                                    At <b style="color: var(--quaternary-color)">avoCode</b>, we are passionate about
+                                    creating custom software solutions that
                                     help
                                     businesses achieve their goals. Our team of experienced developers and designers
                                     work collaboratively with clients to deliver high-quality, scalable, and
@@ -172,7 +173,7 @@
                         development solutions tailored to your specific needs and objectives.
                     </p>
                 </div>
-                <div class="row">
+                <div class="row mx-2">
                     <div class="col-lg-12">
                         <div class="first-bar progress-skill-bar">
                             <h4>Website Development</h4>
@@ -221,8 +222,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <a href="#">
+            <div id="portfolioSection" class="col-lg-3 col-sm-6">
+                <a>
                     <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                         <div class="hidden-content">
                             <h4>Website Development</h4>
@@ -235,8 +236,8 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <a href="#">
+            <div id="portfolioSection" class="col-lg-3 col-sm-6">
+                <a>
                     <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                         <div class="hidden-content">
                             <h4>Website Design</h4>
@@ -249,8 +250,8 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <a href="#">
+            <div id="portfolioSection" class="col-lg-3 col-sm-6">
+                <a>
                     <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="hidden-content">
                             <h4>Mobile Development</h4>
@@ -263,8 +264,8 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <a href="#">
+            <div id="portfolioSection" class="col-lg-3 col-sm-6">
+                <a>
                     <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
                         <div class="hidden-content">
                             <h4>Digital Marketing</h4>
@@ -281,7 +282,7 @@
     </div>
 </div>
 
-<div id="contact" class="contact-us section">
+<div id="contactUs" class="contact-us section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
@@ -352,6 +353,17 @@
 <script src="{{asset('js/animation.js')}}"></script>
 <script src="{{asset('js/imagesloaded.js')}}"></script>
 <script src="{{asset('js/templatemo-custom.js')}}"></script>
+<script>
+    let allPortfolioSection = document.querySelectorAll('#portfolioSection');
+    allPortfolioSection.forEach(portfolioSection => {
+        portfolioSection.addEventListener('click', () => {
+            allPortfolioSection.forEach(portfolioSection => {
+                portfolioSection.style.zIndex = 0;
+            });
+            portfolioSection.style.zIndex = 10000;
+        });
+    });
+</script>
 
 </body>
 </html>
